@@ -1,0 +1,42 @@
+{
+  "name": "jsapi-cdn-template-app",
+  "version": "1.0.0",
+  "description": "",
+  "watch": {
+    "build:dev": "./src/**",
+    "postcss": "./src/css/**"
+  },
+  "scripts": {
+    "build:dev": "tsc -w",
+    "postcss": "postcss -o dist/main.css src/css/*.css",
+    "start": "tsc && npm run watch",
+    "watch": "npm-watch"
+  },
+  "postcss": {
+    "map": false,
+    "plugins": {
+      "autoprefixer": {},
+      "postcss-nested": {},
+      "postcss-css-variables": {}
+    }
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/arcgis-js-api": "^4.18.0",
+    "@types/gl-matrix": "^2.4.5",
+    "autoprefixer": "^9.7.3",
+    "npm-watch": "^0.6.0",
+    "postcss-cli": "^6.1.3",
+    "postcss-css-variables": "^0.14.0",
+    "postcss-nested": "^4.2.1",
+    "prettier": "~2.2.1",
+    "tslib": "~2.0.3",
+    "tslint": "^6.1.3",
+    "tslint-consistent-codestyle": "1.16.0",
+    "tslint-plugin-prettier": "^2.3.0",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "gl-matrix": "^3.1.0"
+  }
+}

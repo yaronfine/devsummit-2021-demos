@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" href="https://js.arcgis.com/4.19/esri/themes/light/main.css">
+  <link rel="stylesheet" href="../../dist/main.css">
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    #topbar {
+      padding: 10px;
+      width: 190px;
+    }
+    .style-button {
+      margin: 3px;
+    }
+  </style>
+  <script>        
+    var locationPath = location.href.replace(/\/[^\/]+$/, "../../../");
+    window.dojoConfig = {
+      packages: [
+        {
+          name: "app",
+          location: locationPath + "dist/demo1"
+        },
+        {
+          name: "common",
+          location: locationPath + "dist/common"
+        },
+        {
+          name: "gl-matrix",
+          location: locationPath + "node_modules/gl-matrix",
+          main: "gl-matrix-min"
+        }
+      ],
+      deps: ['app/index']
+    };    
+  </script>
+  <script src="https://js.arcgis.com/4.19/"></script>
+</head>
+<body>
+  <noscript> JavaScript is required in order to use this app </noscript>
+  <div class="app-container">
+    <header class="header">
+      <h2 class="heading">Tracking cars</h2>
+    </header>
+    <div id="viewDiv"></div>
+    <div id="topbar" class="esri-widget">
+      <button class="esri-button style-button" id="connectionButton" type="button">
+        Connect to service
+      </button>
+    </div>
+  </div>
+</body>
+</html>
+
